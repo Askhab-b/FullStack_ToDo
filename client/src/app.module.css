@@ -1,0 +1,31 @@
+.app {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.addBtn {
+  background-color: rebeccapurple;
+  border: none;
+  color: rgb(8, 247, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+input {
+border-color: red;
+height: 40px;
+width: 54%;
+}
+
+
+.todo {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed {
+  background-color: gold;
+}
