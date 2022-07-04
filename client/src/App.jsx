@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./app.module.css";
 
-
-
 import {
   addTodo,
   fetchTodos,
@@ -15,8 +13,6 @@ import {
 function App() {
   const todos = useSelector((state) => state.todos); // []
   const loading = useSelector((state) => state.loading);
-
-  // console.log(todos);
 
   const [text, setText] = useState("");
 
@@ -32,7 +28,7 @@ function App() {
 
   const handleAddTodo = () => {
     dispatch(addTodo(text));
-    setText("")
+    setText("");
   };
 
   const handleFav = (todo) => {
@@ -46,7 +42,11 @@ function App() {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <input placeholder="Type your todo..." value={text} onChange={(e) => setText(e.target.value)} />
+        <input
+          placeholder="Type your todo..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
         <button onClick={handleAddTodo} className={styles.addBtn}>
           Добавить
         </button>

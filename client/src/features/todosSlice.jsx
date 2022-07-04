@@ -93,36 +93,18 @@ export const todosSlice = createSlice({
         return todo._id !== action.payload;
       });
     });
-    // .addCase(removeTodo.pending, (state, action) => {
-    //   state.todos = state.todos.filter((todo) => {
-    //     return todo._id !== action.payload;
-    //   });
-    // })
-    // .addCase(removeTodo.rejected, (state, action) => {
-    //   state.todos = state.todos.filter((todo) => {
-    //     return todo._id !== action.payload;
-    //   });
-    // });
+
     builder.addCase(addTodo.fulfilled, (state, action) => {
       state.todos.push(action.payload);
     });
-    // .addCase(addTodo.pending, (state, action) => {
-    //   state.todos = state.todos.filter((todo) => {
-    //     return todo._id !== action.payload;
-    //   });
-    // })
-    // .addCase(addTodo.rejected, (state, action) => {
-    //   state.todos = state.todos.filter((todo) => {
-    //     return todo._id !== action.payload;
-    //   });
-    // });
+
     builder.addCase(patchTodo.fulfilled, (state, action) => {
       state.todos = state.todos.map((todo) => {
         if (todo._id === action.payload._id) {
-          return action.payload
+          return action.payload;
         }
-        return todo
-      })
+        return todo;
+      });
     });
   },
 });

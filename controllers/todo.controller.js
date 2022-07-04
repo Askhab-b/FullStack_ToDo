@@ -6,7 +6,7 @@ module.exports.todoController = {
       const todoAdd = await Todo.create({
         text: req.body.text,
       });
-      res.json(todoAdd)
+      res.json(todoAdd);
     } catch (error) {
       res.json(error.message);
     }
@@ -23,10 +23,14 @@ module.exports.todoController = {
 
   patchTodo: async (req, res) => {
     try {
-      const patchTodo = await Todo.findByIdAndUpdate(req.params.id, {
-        completed: req.body.completed
-      }, {new: true});
-      res.json(patchTodo)
+      const patchTodo = await Todo.findByIdAndUpdate(
+        req.params.id,
+        {
+          completed: req.body.completed,
+        },
+        { new: true }
+      );
+      res.json(patchTodo);
     } catch (error) {
       res.json(error.message);
     }
